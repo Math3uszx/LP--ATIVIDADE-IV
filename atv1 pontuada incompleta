@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+#define TAM 3
+
+     struct info_contatos{
+        char nome[200];
+        char telefone[200];
+        char email[200];
+     };
+
+        //comparação de strings
+        void pesquisarcontato(struct info_contatos *contatos,char *contato){
+          int i;
+           for (i = 0; i < TAM; i++){
+             if(strcmp(contatos[i].nome, contato) == 0){
+              printf("Nome: %s \n,contato[i].nome");
+              printf("Telefone: %s \n,contato[i].telefone");
+              return;
+        }
+             }
+            
+           }
+        
+
+    int main(){
+      setlocale(LC_ALL,"portuguese");
+
+     struct info_contatos contatos[TAM];
+     int i;
+     char contato[200];
+
+     for (i = 0; i < TAM; i++)
+     {
+        printf("\nInforme o nome: \n",i + 1);
+        gets(contatos[TAM].nome);
+
+        printf("\nInforme o seu telefone: \n",i + 1);
+        gets(contatos[TAM].telefone);
+        
+        printf("\nInforme o seu email: \n",i + 1);
+        gets(contatos[TAM].email);
+        
+        fflush(stdin);
+     }
+
+      printf("\nDigite o nome do contato desejado:");
+      gets(contato);
+
+      pesquisarcontato(contatos, contato);
+
+         printf("\n contato encontrado: %i \n",pesquisarcontato);
+       for (i = 0; i < TAM; i++)
+       {
+         printf("\n Nome do produto: %s \n",contatos[i].nome);
+         printf("\n Telefone: %s \n",contatos[i].telefone);
+         printf("\n Email: %s \n",contatos[i].email);
+       }
+     return 0;
+}
