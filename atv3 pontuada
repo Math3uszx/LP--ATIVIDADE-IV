@@ -22,11 +22,13 @@ void menu(){
   printf("===================================\n");
      }
 
-    struct Dados_produto produto; 
+  
 
 int main(){
+    struct Dados_produto produto; 
   int codigo = 0;
   int i;
+  int Total;
  
     do  {
     menu();
@@ -46,20 +48,22 @@ switch (codigo){
      printf("Quantidade de estoque:");
       scanf("%i",&produto.estoque);
 
+Total =Total+ produto.estoque;
     break;
 
   case 2:
-  // printf("estoque Total: %d \n",estoqueTotal);
+  printf("estoque Total: %d \n",Total);
     break;
 
   case 3:
-    //fim do programa
+    printf("Nome: %s \n ",produto.nome);
+    printf("Preço: %.2f \n ",produto.preco);
+    printf("estoque: %i \n ",produto.estoque);
 
     break;  
   default:
-    printf("op��o inv�lida");
+    printf("opção invalida");
     break;
-
 }
 
    
