@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <ctype.h>
+#include <string.h>
+
+
+
+struct Dados_funcionario {
+    char nome[200];
+    float salario;
+    char cargo[200];
+};
+
+
+int main(){
+    struct Dados_funcionario funcionario[3]; 
+    int i;
+    float media;
+    int soma;
+      for(i = 0; i < 3; i++) {
+        printf("\nSolicitando dados do funcionario... \n");
+        printf("\nDigite o nome: ");
+        gets(funcionario[i].nome);
+   
+        printf("Digite o seu cargo: ");
+        gets(funcionario[i].cargo);
+       
+        printf("Digite o salario: ");
+        scanf("%f",&funcionario[i].salario);
+        fflush(stdin);
+        soma = soma + funcionario[i].salario;
+    }
+    media = soma/ 3;
+    soma = 0;
+    
+   
+      for(i = 0; i < 3; i++) {
+   printf("nome: %s \n",funcionario[i].nome);
+   printf("cargo: %s \n",funcionario[i].cargo);
+   printf("salario: %.2f \n",funcionario[i].salario);
+      }
+   printf("media: %.2f \n",media);
+ return 0;
+} 
